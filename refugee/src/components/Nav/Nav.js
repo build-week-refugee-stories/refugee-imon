@@ -14,9 +14,9 @@ function Nav() {
                     </div>
                     <div className='menu-links'>
                         <Link to='/' className='link'>Home</Link>
-                        <Link to='#' className='link'>Stories</Link>
+                        <Link to='/stories' className='link'>Stories</Link>
                         <Link to='#' className='link'>Submit Your Story</Link>
-                        <Link to='#' className='link'>Admin Log-In</Link>
+                        <Link to='/login' className='link'>Admin Log-In</Link>
                     </div>
                 </nav>
             </header>
