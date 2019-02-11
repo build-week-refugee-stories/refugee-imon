@@ -17,10 +17,11 @@ class Login extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        console.log(e.target.value)
+        console.log(e.target.value, e.target.name)
     }
 
     setUser = e => {
+        e.preventDefault();
         const user = this.state.user;
         localStorage.setItem('user', user);
         window.location.reload()
@@ -34,7 +35,7 @@ class Login extends React.Component {
                     <input
                         placeholder='Enter Username'
                         type='text'
-                        name='name'
+                        name='user'
                         onChange={this.handleInput}
                         value={this.state.user}
                         required
