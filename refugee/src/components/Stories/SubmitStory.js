@@ -1,20 +1,44 @@
 import React from 'react';
+import axios from 'axios';
+import SubmitStoryForm from './SubmitStoryForm';
 
 class SubmitStory extends React.Component {
     constructor() {
         super()
+
+        this.state = {
+            newStory: {
+                author: '',
+                title: '',
+                body: '',
+                country: ''
+            }
+        }
+    }
+
+    addStory = e => {
+        e.preventDefault();
+        axios.post('https://refugeestories.herokuapp.com/api/submit', this.state.newStory)
+            .then(res => {
+                this.setState({
+                    newStory: res.data
+                })
+                this.props.history.push('/')
+            })
+            .catch(err => console.log(err))
+    }
+
+    handleInput = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        console.log(e.target.value)
     }
 
     render() {
         return (
             <div>
-                <form>
-                    <input placeholder='Enter Author' type='text' />
-                    <input placeholder='Enter Title' type='text' />
-                    <input placeholder='Enter Country' type='text' />
-                    <textarea></textarea>
-                    <button>SUBMIT STORY</button>
-                </form>
+                <SubmitStoryForm newStory={this.state.newStory} addStory={this.addStory} handleInput={this.handleInput} />
             </div>
         )
     }
