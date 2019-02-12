@@ -21,7 +21,8 @@ class App extends Component {
       <div className="App">
         <Nav />
         <Route exact path='/' component={Home} />
-        <Route path='/login' component={Authenticate} />
+        <Route path='/login' component={Login} />
+        <Route path='/recent-stories' component={RecentStories} />
         <Route exact path='/stories' component={Stories} />
         <Route path='/stories/:id' component={IndividualStoryPage} />
         <Route path='/submit-story' component={SubmitStory} />

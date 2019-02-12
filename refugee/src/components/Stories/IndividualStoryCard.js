@@ -7,8 +7,8 @@ const IndividualStoryCard = props => {
         <div className='individual-story-card'>
             <div>{props.individualStory.author}</div>
             <div>{props.individualStory.title}</div>
-            <div>{props.individualStory.body}</div>
             <img src={props.individualStory.url_thumbnail} alt='pic' />
+            <div>{props.individualStory.body}</div>
         </div>
     )
 }

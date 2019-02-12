@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Login.css'
+import axios from 'axios';
 
 class Login extends React.Component {
     constructor(props) {
@@ -22,9 +23,17 @@ class Login extends React.Component {
 
     setUser = e => {
         e.preventDefault();
-        const user = this.state.user;
-        localStorage.setItem('user', user);
-        window.location.reload()
+        const user = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        axios.post('https://refugeestories.herokuapp.com/api/login', user)
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.token)
+                this.props.history.push('/recent-stories')
+            })
+
     }
 
     render() {
@@ -37,7 +46,7 @@ class Login extends React.Component {
                         type='text'
                         name='user'
                         onChange={this.handleInput}
-                        value={this.state.user}
+                        value={this.state.username}
                         required
                     />
                     <input

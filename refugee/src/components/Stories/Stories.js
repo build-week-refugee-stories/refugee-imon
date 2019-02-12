@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import Story from './Story'
+import './Stories.css'
 
 class Stories extends React.Component {
     constructor(props) {
@@ -26,10 +27,10 @@ class Stories extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='stories'>
                 {this.state.stories.map((story) => {
                     return (
-                        <Link to={`/stories/${story.id}`} key={story.id}>
+                        <Link className='story' to={`/stories/${story.id}`} key={story.id}>
                             <Story story={story} key={story.id} />
                         </Link>
                     )
