@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import Story from './Story'
 
@@ -28,7 +29,9 @@ class Stories extends React.Component {
             <div>
                 {this.state.stories.map((story) => {
                     return (
-                        <Story story={story} key={story.id} />
+                        <Link to={`/stories/${story.id}`} key={story.id}>
+                            <Story story={story} key={story.id} />
+                        </Link>
                     )
                 })}
             </div>

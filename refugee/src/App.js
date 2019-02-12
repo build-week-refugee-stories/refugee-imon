@@ -7,6 +7,7 @@ import Nav from './components/Nav/Nav';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Stories from './components/Stories/Stories';
+import Story from './components/Stories/Story'
 import SubmitStory from './components/Stories/SubmitStory';
 import RecentStories from './components/Stories/RecentStories'
 
@@ -21,7 +22,8 @@ class App extends Component {
         <Nav />
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Authenticate} />
-        <Route path='/stories' component={Stories} />
+        <Route exact path='/stories' component={Stories} />
+        <Route path='/stories/:id' component={Story} />
         <Route path='/submit-story' component={SubmitStory} />
       </div>
     );
