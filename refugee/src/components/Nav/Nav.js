@@ -15,7 +15,7 @@ function Nav() {
                     <div className='menu-links'>
                         <Link to='/' className='link'>Home</Link>
                         <Link to='/stories' className='link'>Stories</Link>
-                        <Link to='#' className='link'>Submit Your Story</Link>
+                        <Link to='/submit-story' className='link'>Submit Your Story</Link>
                         <Link to='/login' className='link'>Admin Log-In</Link>
                     </div>
                 </nav>

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class RecentStories extends React.Component {
     constructor() {
@@ -7,6 +8,10 @@ class RecentStories extends React.Component {
         this.state = {
             recentStories: []
         }
+    }
+
+    componentDidMount() {
+
     }
 
     render() {
