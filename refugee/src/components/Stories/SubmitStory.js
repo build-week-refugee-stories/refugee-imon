@@ -7,21 +7,20 @@ class SubmitStory extends React.Component {
         super()
 
         this.state = {
-            newStory: {
-                author: '',
-                title: '',
-                body: '',
-                country: ''
-            }
+            author: '',
+            title: '',
+            body: '',
+            country: ''
         }
     }
 
+
     addStory = e => {
         e.preventDefault();
-        axios.post('https://refugeestories.herokuapp.com/api/submit', this.state.newStory)
+        axios.post('https://refugeestories.herokuapp.com/api/submit', this.state)
             .then(res => {
                 this.setState({
-                    newStory: res.data
+                    stories: res.data
                 })
                 this.props.history.push('/')
             })

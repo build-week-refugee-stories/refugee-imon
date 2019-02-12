@@ -4,8 +4,8 @@ import axios from 'axios';
 import Story from './Story'
 
 class Stories extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             stories: []
@@ -26,9 +26,9 @@ class Stories extends React.Component {
 
         return (
             <div>
-                {this.state.stories.map((story, index) => {
+                {this.state.stories.map((story) => {
                     return (
-                        <Story story={story} key={index} />
+                        <Story story={story} key={story.id} />
                     )
                 })}
             </div>
