@@ -1,15 +1,22 @@
 import React from 'react';
+import axios from 'axios';
+import IndividualStoryCard from './IndividualStoryCard'
 
-class IndividualStory extends React.Component {
+class IndividualStoryPage extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            indiviualStory: null
+            individualStory: {
+                author: '',
+                title: '',
+                body: '',
+                pic: ''
+            }
         }
     }
 
-    componentDidMount(props) {
+    componentDidMount() {
         const id = this.props.match.params.id;
         this.fetchStory(id)
     }
@@ -17,16 +24,17 @@ class IndividualStory extends React.Component {
     fetchStory = id => {
         axios.get(`https://refugeestories.herokuapp.com/api/stories/${id}`)
             .then(res => {
-                this.setState(() => ({ story: res.data }))
+                this.setState(() => ({ individualStory: res.data }))
             })
             .catch(err => console.log(err))
     }
 
     render() {
+
         return (
-            <div></div>
+            <IndividualStoryCard individualStory={this.state.individualStory} />
         )
     }
 }
 
-export default IndividualStory;
+export default IndividualStoryPage;
