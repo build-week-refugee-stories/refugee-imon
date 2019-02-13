@@ -11,10 +11,6 @@ import IndividualStoryPage from './components/Stories/IndividualStory';
 import SubmitStory from './components/Stories/SubmitStory';
 import RecentStories from './components/Stories/RecentStories'
 
-import authenticate from './components/Authenticate/Authenticate'
-
-const Authenticate = authenticate(Login)(RecentStories)
-
 class App extends Component {
   render() {
     return (

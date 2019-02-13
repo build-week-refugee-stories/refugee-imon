@@ -24,7 +24,7 @@ class Login extends React.Component {
     setUser = e => {
         e.preventDefault();
         const user = {
-            username: this.state.username,
+            username: this.state.user,
             password: this.state.password
         }
         axios.post('https://refugeestories.herokuapp.com/api/login', user)
@@ -46,7 +46,7 @@ class Login extends React.Component {
                         type='text'
                         name='user'
                         onChange={this.handleInput}
-                        value={this.state.username}
+                        value={this.state.user}
                         required
                     />
                     <input
