@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import IndividualStoryCard from './IndividualStoryCard';
+import IndividualRecentStoryCard from './IndividualRecentStoryCard';
 
 class IndividualRecentStoryPage extends React.Component {
     constructor(props) {
@@ -14,7 +14,6 @@ class IndividualRecentStoryPage extends React.Component {
                 body: ''
             }
         }
-        console.log(this.props)
     }
 
     componentDidMount() {
@@ -31,7 +30,7 @@ class IndividualRecentStoryPage extends React.Component {
         }
         axios.get(`https://refugeestories.herokuapp.com/api/allstories/${id}`, requestOptions)
             .then(res => {
-                console.log(res)
+
                 this.setState({
                     individualRecentStory: res.data
                 })
@@ -45,10 +44,10 @@ class IndividualRecentStoryPage extends React.Component {
         const requestOptions = {
             headers: { authorization: token }
         };
-        // const id = this.props.match.params.id;
+
         axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
             .then(res => {
-                // console.log(res)
+
                 this.props.history.push('/recent-stories')
             })
             .catch(err => console.log(err))
@@ -62,16 +61,16 @@ class IndividualRecentStoryPage extends React.Component {
         };
         axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, requestOptions)
             .then(res => {
-                console.log(res)
+
                 this.props.history.push('/stories')
             })
             .catch(err => console.log(err))
     }
 
     render() {
-        console.log(this.state.individualRecentStory)
+
         return (
-            <IndividualStoryCard
+            <IndividualRecentStoryCard
                 deleteStory={this.deleteStory}
                 individualRecentStory={this.state.individualRecentStory}
                 acceptStory={this.acceptStory}

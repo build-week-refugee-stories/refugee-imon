@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Story = (props) => {
-
+    console.log()
     return (
         <div>
             <div><img src={props.story.url_thumbnail} alt='thumbnail-pic' /></div>
