@@ -14,6 +14,7 @@ class IndividualRecentStoryPage extends React.Component {
                 body: ''
             }
         }
+        console.log(this.props)
     }
 
     componentDidMount() {
@@ -38,16 +39,16 @@ class IndividualRecentStoryPage extends React.Component {
             .catch(err => console.log(err))
     }
 
-    deleteStory = (e) => {
+    deleteStory = (e, id) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const requestOptions = {
-            headers: { autorization: token }
-        }
-        const id = this.props.params.id;
+            headers: { authorization: token }
+        };
+        // const id = this.props.match.params.id;
         axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 this.props.history.push('/recent-stories')
             })
             .catch(err => console.log(err))
@@ -58,8 +59,7 @@ class IndividualRecentStoryPage extends React.Component {
         const token = localStorage.getItem('token');
         const requestOptions = {
             headers: { autorization: token }
-        }
-
+        };
         axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, requestOptions)
             .then(res => {
                 console.log(res)
@@ -69,6 +69,7 @@ class IndividualRecentStoryPage extends React.Component {
     }
 
     render() {
+        console.log(this.state.individualRecentStory)
         return (
             <IndividualStoryCard
                 deleteStory={this.deleteStory}

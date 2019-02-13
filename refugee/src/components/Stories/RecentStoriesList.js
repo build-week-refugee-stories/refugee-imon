@@ -21,12 +21,15 @@ class RecentStoriesList extends React.Component {
         }
         axios.get('https://refugeestories.herokuapp.com/api/allstories', requestOptions)
             .then(res => {
+                console.log(res)
                 this.setState({
                     recentStories: res.data
                 })
             })
             .catch(err => console.log(err))
     }
+
+
 
     render() {
 
@@ -36,10 +39,11 @@ class RecentStoriesList extends React.Component {
                     return (
                         <RecentStory
                             reStory={reStory}
-                            key={reStory.id}
+                            key={index}
                             deleteStory={this.deleteStory}
                             acceptStory={this.acceptStory}
                         />
+
                     )
                 })}
             </div>
