@@ -1,9 +1,10 @@
 .App {
-    height: 100vh;
+    min-height: 100%;
     width: 100%;
     background-image: url('https://www.annenbergphotospace.org/wp-content/uploads/2016/02/refugee-1920x1000-hero_0.jpg');
     background-repeat: no-repeat;
     position: absolute;
     background-size: cover;
     background-attachment: fixed;
+    color: #fff;
 }
