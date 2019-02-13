@@ -10,6 +10,7 @@ import Stories from './components/Stories/Stories';
 import IndividualStoryPage from './components/Stories/IndividualStory';
 import SubmitStory from './components/Stories/SubmitStory';
 import RecentStoriesList from './components/Stories/RecentStoriesList'
+import IndividualRecentStoryPage from './components/Stories/IndividualRecentStoryPage';
 
 class App extends Component {
   render() {
@@ -18,7 +19,8 @@ class App extends Component {
         <Nav />
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Login} />
-        <Route path='/recent-stories' component={RecentStoriesList} />
+        <Route exact path='/recent-stories' component={RecentStoriesList} />
+        <Route path='/recent-stoies/:id' component={IndividualRecentStoryPage} />
         <Route exact path='/stories' component={Stories} />
         <Route path='/stories/:id' component={IndividualStoryPage} />
         <Route path='/submit-story' component={SubmitStory} />

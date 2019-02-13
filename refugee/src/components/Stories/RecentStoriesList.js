@@ -28,34 +28,18 @@ class RecentStoriesList extends React.Component {
             .catch(err => console.log(err))
     }
 
-    deleteStory = (e, id) => {
-        e.preventDefault();
-        const token = localStorage.getItem('token');
-        const requestOptions = {
-            headers: {
-                autorization: token
-            }
-        }
-        axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
-            .then(res => {
-                console.log(res)
-                this.props.history.push('/recent-stories')
-            })
-            .catch(err => console.log(err))
-    }
-
-    acceptStory = (e, id) => {
-        e.preventDefault();
-    }
-
-
     render() {
 
         return (
             <div>
                 {this.state.recentStories.map((reStory, index) => {
                     return (
-                        <RecentStory reStory={reStory} key={index} deleteStory={this.deleteStory} />
+                        <RecentStory
+                            reStory={reStory}
+                            key={reStory.id}
+                            deleteStory={this.deleteStory}
+                            acceptStory={this.acceptStory}
+                        />
                     )
                 })}
             </div>
