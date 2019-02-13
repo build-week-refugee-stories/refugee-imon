@@ -34,13 +34,15 @@ class CarouselSlides extends Component {
         super(props);
         this.state = {
             activeIndex: 0,
-            items: []
+            items: [],
+
         };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.goToIndex = this.goToIndex.bind(this);
         this.onExiting = this.onExiting.bind(this);
         this.onExited = this.onExited.bind(this);
+        this.bkGround = this.bkGround.bind(this);
     }
 
     componentDidMount() {
@@ -78,16 +80,22 @@ class CarouselSlides extends Component {
         this.setState({ activeIndex: newIndex });
     }
 
+    bkGround(item, index) {
+        if (item.id === index) {
+            return item.url_thumbnail
+        }
+    }
+
     render() {
 
         const { activeIndex } = this.state;
 
-        const slides = this.state.items.map((item) => {
+        const slides = this.state.items.map((item, index) => {
             return (
                 <CarouselItem
                     className="custom-tag"
                     tag="div"
-                    itemBackground={item.url_picture}
+                    itemBackground={this.bkGround(item, index)}
                     key={item.id}
                     onExiting={this.onExiting}
                     onExited={this.onExited}
@@ -104,7 +112,7 @@ class CarouselSlides extends Component {
                         `.custom-tag {
                     max-width: 100%;
                     height: 500px;
-                    background-color: 'black';
+                    
                 }`
                     }
                 </style>
