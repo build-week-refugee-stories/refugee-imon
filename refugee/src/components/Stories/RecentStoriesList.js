@@ -36,9 +36,16 @@ class RecentStoriesList extends React.Component {
                 autorization: token
             }
         }
-        axios.delete('https://refugeestories.herokuapp.com/api/stories/:id', requestOptions, id)
-            .then(res => console.log(res))
+        axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
+            .then(res => {
+                console.log(res)
+                this.props.history.push('/recent-stories')
+            })
             .catch(err => console.log(err))
+    }
+
+    acceptStory = (e, id) => {
+        e.preventDefault();
     }
 
 

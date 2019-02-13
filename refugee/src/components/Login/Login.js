@@ -29,7 +29,6 @@ class Login extends React.Component {
         }
         axios.post('https://refugeestories.herokuapp.com/api/login', user)
             .then(res => {
-                console.log(res)
                 localStorage.setItem('token', res.data.token)
                 this.props.history.push('/recent-stories')
             })
