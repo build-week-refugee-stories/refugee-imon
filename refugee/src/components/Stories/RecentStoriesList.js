@@ -21,7 +21,7 @@ class RecentStoriesList extends React.Component {
         }
         axios.get('https://refugeestories.herokuapp.com/api/allstories', requestOptions)
             .then(res => {
-                console.log(res)
+
                 this.setState({
                     recentStories: res.data
                 })
