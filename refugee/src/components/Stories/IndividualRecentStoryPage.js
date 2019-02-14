@@ -17,7 +17,7 @@ class IndividualRecentStoryPage extends React.Component {
                 author: "Anonomous",
                 title: "Bitcoin",
                 snippet: "I was able to...",
-                approved: true,
+                approved: false,
                 body: "...A friends of mine, ...",
                 country: "Afghdfanistan",
                 url_picture: 'www.hello.com/fred.gif',
@@ -70,6 +70,7 @@ class IndividualRecentStoryPage extends React.Component {
 
         const addIndividualRecentStory = {
             ...this.state.addIndividualRecentStory,
+            approved: true,
             title: this.state.individualRecentStory.title,
             author: this.state.individualRecentStory.author,
             country: this.state.individualRecentStory.country,
