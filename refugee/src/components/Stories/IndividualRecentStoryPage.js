@@ -56,6 +56,7 @@ class IndividualRecentStoryPage extends React.Component {
 
         axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
             .then(res => {
+                console.log(res)
                 this.props.history.push('/recent-stories')
             })
             .catch(err => console.log(err))
@@ -79,7 +80,7 @@ class IndividualRecentStoryPage extends React.Component {
         console.log(addIndividualRecentStory)
         axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, requestOptions, addIndividualRecentStory)
             .then(res => {
-
+                console.log(res)
                 this.props.history.push('/stories')
             })
             .catch(err => console.log(err))

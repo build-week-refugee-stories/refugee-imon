@@ -1,13 +1,30 @@
 .stories {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-gap: 2rem;
 }
 
 .story {
     width: 40%;
+}
+
+.submit-story {
+    width: 100%;
     margin: 10px 0;
     opacity: .8;
+    font-size: 1.6rem;
+    height: 100%;
+    color: #fff;
+}
+
+.submit-story img {
+    width: 100%;
+}
+
+.submit-story button {
+    background: none;
+    border: none;
+    color: #fff;
 }

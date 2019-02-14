@@ -95,7 +95,7 @@ class CarouselSlides extends Component {
                 <CarouselItem
                     className="custom-tag"
                     tag="div"
-                    itemBackground={this.bkGround(item, index)}
+                    itemBackground={item.url_thumbnail}
                     key={item.id}
                     onExiting={this.onExiting}
                     onExited={this.onExited}
