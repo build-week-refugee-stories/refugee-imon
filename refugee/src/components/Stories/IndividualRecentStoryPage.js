@@ -21,7 +21,7 @@ class IndividualRecentStoryPage extends React.Component {
                 body: "...A friends of mine, ...",
                 country: "Afghdfanistan",
                 url_picture: 'www.hello.com/fred.gif',
-                url_thumbnail: 'www.hello.com/fred_small.gif'
+                url_thumbnail: 'https://www.unrefugees.org/media/1457/iraq-1200x600-rf278608.jpg'
             }
         }
     }
@@ -98,7 +98,6 @@ class IndividualRecentStoryPage extends React.Component {
             <IndividualRecentStoryCard
                 deleteStory={this.deleteStory}
                 individualRecentStory={this.state.individualRecentStory}
-                // addIndividualRecentStory={this.state.addIndividualRecentStory}
                 acceptStory={this.acceptStory}
                 handleInput={this.handleInput}
             />
