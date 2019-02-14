@@ -1,20 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function RecentStory(props) {
-    console.log(props)
-    return (
-        <div>
-            <div>{props.reStory.title}</div>
-            <div>{props.reStory.author}</div>
-            <img src={props.reStory.url_thumbnail} alt='pic' />
-            <div>{props.reStory.body}</div>
+
+class RecentStory extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            reStory: this.props.reStory
+        }
+    }
+
+    render() {
+        return (
             <div>
-                <i className="fas fa-check-double"></i>
-                <i onClick={props.deleteStory} className="fas fa-trash-alt"></i>
+                <Link key={this.state.reStory.id} to={`/recent-stories/${this.props.reStory.id}`}>
+                    <div>{this.state.reStory.title}</div>
+                    <div>{this.state.reStory.author}</div>
+                    <img src={this.state.reStory.url_thumbnail} alt='pic' />
+                    <div>{this.state.reStory.body}</div>
+                </Link>
             </div>
+        )
+    }
 
-        </div>
-    )
 }
 
 export default RecentStory;
