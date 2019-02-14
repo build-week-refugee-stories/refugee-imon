@@ -78,7 +78,7 @@ class IndividualRecentStoryPage extends React.Component {
             body: this.state.individualRecentStory.body
         };
         console.log(addIndividualRecentStory)
-        axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, requestOptions, addIndividualRecentStory)
+        axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, addIndividualRecentStory, requestOptions)
             .then(res => {
                 console.log(res)
                 this.props.history.push('/stories')
