@@ -1,9 +1,14 @@
+.link:hover {
+    text-decoration: none;
+}
+
 .stories {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     margin: 0 auto;
-    grid-gap: 2rem;
+    margin-top: 50px;
+    grid-gap: 3rem;
 }
 
 .story {
@@ -11,6 +16,8 @@
 }
 
 .submit-story {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 10px 0;
     opacity: .8;
@@ -27,4 +34,6 @@
     background: none;
     border: none;
     color: #fff;
+    align-self: flex-start;
+    flex-grow: 2;
 }

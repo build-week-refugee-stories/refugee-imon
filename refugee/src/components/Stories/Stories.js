@@ -30,7 +30,7 @@ class Stories extends React.Component {
             <div className='stories'>
                 {this.state.stories.map((story) => {
                     return (
-                        <Link to={`/stories/${story.id}`} key={story.id}>
+                        <Link className='link' to={`/stories/${story.id}`} key={story.id}>
                             <Story className='story' story={story} key={story.id} />
                         </Link>
                     )
