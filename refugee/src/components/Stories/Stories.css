@@ -1,4 +1,14 @@
-.link:hover {
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.stories .link {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.stories .link:hover {
     text-decoration: none;
 }
 
@@ -7,7 +17,7 @@
     grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 100px;
     grid-gap: 3rem;
 }
 
@@ -18,22 +28,46 @@
 .submit-story {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
-    margin: 10px 0;
     opacity: .8;
-    font-size: 1.6rem;
-    height: 100%;
+    font-size: 1.2rem;
+    min-height: 550px;
     color: #fff;
+    border-radius: 5px;
+}
+
+.submit-story p {
+    margin: 0;
 }
 
 .submit-story img {
     width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.submit-story h3 {
+    border-bottom: 3px solid #fff;
+    margin-top: 30px;
+    padding: 0 0 10px;
+}
+
+.submit-story .snippet-div {
+    margin: 10px 0 25px;
 }
 
 .submit-story button {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     background: none;
     border: none;
     color: #fff;
-    align-self: flex-start;
-    flex-grow: 2;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.submit-story button p {
+    margin-right: 10px;
 }
