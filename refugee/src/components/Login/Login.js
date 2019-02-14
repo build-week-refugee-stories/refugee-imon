@@ -41,14 +41,17 @@ class Login extends React.Component {
             <div className='login'>
                 <form onSubmit={this.setUser}>
                     <input
+                        className='username'
                         placeholder='Enter Username'
                         type='text'
                         name='user'
                         onChange={this.handleInput}
                         value={this.state.user}
+                        autoFocus
                         required
                     />
                     <input
+                        className='password'
                         placeholder='Enter Password'
                         type='password'
                         name='password'
