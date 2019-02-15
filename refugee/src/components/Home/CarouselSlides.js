@@ -8,6 +8,8 @@ import {
     CarouselCaption
 } from 'reactstrap';
 
+import './CarouselSlides.css';
+
 class CarouselSlides extends Component {
     constructor(props) {
         super(props);
@@ -65,6 +67,7 @@ class CarouselSlides extends Component {
         const slides = this.state.items.map((item) => {
             return (
                 <CarouselItem
+                    className='custom-tag'
                     onExiting={this.onExiting}
                     onExited={this.onExited}
                     key={item.id}
