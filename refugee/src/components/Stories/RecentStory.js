@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './RecentStories.css';
+
 
 class RecentStory extends React.Component {
     constructor(props) {
@@ -13,10 +15,10 @@ class RecentStory extends React.Component {
 
     render() {
         return (
-            <div>
-                <Link key={this.state.reStory.id} to={`/recent-stories/${this.props.reStory.id}`}>
-                    <div>{this.state.reStory.title}</div>
-                    <div>{this.state.reStory.author}</div>
+            <div className='recent-story-div'>
+                <Link className='recent-story-div link' key={this.state.reStory.id} to={`/recent-stories/${this.props.reStory.id}`}>
+                    <h2>{this.state.reStory.title}</h2>
+                    <h4>{this.state.reStory.author}</h4>
                     <img src={this.state.reStory.url_thumbnail} alt='pic' />
                     <div>{this.state.reStory.body}</div>
                 </Link>

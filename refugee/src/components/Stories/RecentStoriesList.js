@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import RecentStory from './RecentStory';
 
+import './RecentStories.css';
+
 
 class RecentStoriesList extends React.Component {
     constructor() {
@@ -21,7 +23,7 @@ class RecentStoriesList extends React.Component {
         }
         axios.get('https://refugeestories.herokuapp.com/api/allstories', requestOptions)
             .then(res => {
-                console.log(res)
+
                 this.setState({
                     recentStories: res.data
                 })
@@ -34,7 +36,7 @@ class RecentStoriesList extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='recent-stories-container'>
                 {this.state.recentStories.map((reStory, index) => {
                     return (
                         <RecentStory
@@ -43,7 +45,6 @@ class RecentStoriesList extends React.Component {
                             deleteStory={this.deleteStory}
                             acceptStory={this.acceptStory}
                         />
-
                     )
                 })}
             </div>

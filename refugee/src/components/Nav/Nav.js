@@ -14,6 +14,7 @@ function Nav() {
                     </div>
                     <div className='menu-links'>
                         <Link to='/' className='link'>Home</Link>
+                        <a href='https://refugee-stories-mbtt.netlify.com/about.html' className='link'>About</a>
                         <Link to='/stories' className='link'>Stories</Link>
                         <Link to='/submit-story' className='link'>Submit Your Story</Link>
                         <Link to='/login' className='link'>Admin Log-In</Link>

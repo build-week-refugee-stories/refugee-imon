@@ -10,8 +10,18 @@ class IndividualRecentStoryPage extends React.Component {
             individualRecentStory: {
                 title: '',
                 author: '',
-                url_thumbnail: '',
+                country: '',
                 body: ''
+            },
+            addIndividualRecentStory: {
+                author: "Anonomous",
+                title: "Bitcoin",
+                snippet: "I was able to...",
+                approved: false,
+                body: "...A friends of mine, ...",
+                country: "Afghdfanistan",
+                url_picture: 'www.hello.com/fred.gif',
+                url_thumbnail: 'https://www.unrefugees.org/media/1457/iraq-1200x600-rf278608.jpg'
             }
         }
     }
@@ -30,7 +40,6 @@ class IndividualRecentStoryPage extends React.Component {
         }
         axios.get(`https://refugeestories.herokuapp.com/api/allstories/${id}`, requestOptions)
             .then(res => {
-
                 this.setState({
                     individualRecentStory: res.data
                 })
@@ -47,7 +56,7 @@ class IndividualRecentStoryPage extends React.Component {
 
         axios.delete(`https://refugeestories.herokuapp.com/api/deletestory/${id}`, requestOptions)
             .then(res => {
-
+                console.log(res)
                 this.props.history.push('/recent-stories')
             })
             .catch(err => console.log(err))
@@ -57,14 +66,30 @@ class IndividualRecentStoryPage extends React.Component {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const requestOptions = {
-            headers: { autorization: token }
+            headers: { authorization: token }
         };
-        axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, requestOptions)
-            .then(res => {
 
+        const addIndividualRecentStory = {
+            ...this.state.addIndividualRecentStory,
+            approved: true,
+            title: this.state.individualRecentStory.title,
+            author: this.state.individualRecentStory.author,
+            country: this.state.individualRecentStory.country,
+            body: this.state.individualRecentStory.body
+        };
+        console.log(addIndividualRecentStory)
+        axios.put(`https://refugeestories.herokuapp.com/api/updatestory/${id}`, addIndividualRecentStory, requestOptions)
+            .then(res => {
+                console.log(res)
                 this.props.history.push('/stories')
             })
             .catch(err => console.log(err))
+    }
+
+    handleInput = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render() {
@@ -74,6 +99,7 @@ class IndividualRecentStoryPage extends React.Component {
                 deleteStory={this.deleteStory}
                 individualRecentStory={this.state.individualRecentStory}
                 acceptStory={this.acceptStory}
+                handleInput={this.handleInput}
             />
         )
     }

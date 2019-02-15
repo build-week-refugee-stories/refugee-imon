@@ -1,0 +1,24 @@
+.recent-stories-container {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 1.2rem;
+}
+
+.recent-story-div {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.recent-story-div .link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.recent-story-div .link h4 {
+    margin-bottom: 30px;
+}
+
+.recent-story-div .link img {
+    width: 100%;
+}
