@@ -1,12 +1,14 @@
 import React from 'react';
 
+import './IndividualRecentStory.css'
+
 const IndividualRecentStoryCard = props => {
 
     return (
-        <div>
-            <div>
-                <div>{props.individualRecentStory.title}</div>
-                <div>{props.individualRecentStory.author}</div>
+        <div className='individual-recent-story-container'>
+            <div className='individual-recent-story-div'>
+                <h1>{props.individualRecentStory.title}</h1>
+                <h4>{props.individualRecentStory.author}</h4>
                 <img src={props.individualRecentStory.country} alt='thumbnail' />
                 <div>{props.individualRecentStory.body}</div>
                 <i onClick={(e) => props.acceptStory(e, props.individualRecentStory.id)} className="fas fa-check-double"></i>

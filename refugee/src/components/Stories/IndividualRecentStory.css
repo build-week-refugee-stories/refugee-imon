@@ -1,0 +1,27 @@
+.individual-recent-story-container {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.individual-recent-story-div {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.individual-recent-story-div i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.individual-recent-story-div i:hover {
+    font-size: 2.5rem;
+}
+
+.individual-recent-story-div .fa-check-double:hover {
+    color: rgb(124, 252, 0);
+}
+
+.individual-recent-story-div .fa-trash-alt:hover {
+    color: rgb(231, 24, 24);
+}
